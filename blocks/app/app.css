@@ -1,0 +1,13 @@
+body, html {
+	height: 100%;
+}
+
+.app {
+	max-width: 600px;
+    transform: translateY(-50%) translateX(-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    background-color: #fff;
+}
