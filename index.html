@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="blocks/menu/menu.css">
+	<link rel="stylesheet" href="blocks/form/form.css">
+</head>
+
+<body>
+
+<div class="js-menu"></div>
+<div class="js-form"></div>
+
+
+<script type="text/x-tmpl" id="menu">
+	<div class="menu" >
+		<span class="menu_title" data-action="open">
+			<%this.title%>
+		</span>
+		<div class="menu_list">
+
+			<%for (let i=0; i<this.items.length; i++) {%>
+				<div class="sweet" data-index="<%i%>">
+					<a href="<%this.items[i].href%>" > <%this.items[i].anchor%></a>
+					<i class="close" data-action="remove"></i>
+				</div>
+			<%}%>
+		</div>
+	</div>
+
+</script>
+
+<script type="text/x-tmpl" id="form">
+	<form class="form">
+			<input class="form_input" type="url" name="href" required="required" placeholder="url"/>
+			<input class= "form_input" type="text" name="anchor" required="required" placeholder="wat?"/>
+			<button class="form_button" type="submit">Save</button>
+	</form>
+</script>
+
+
+<script type="text/javascript" src="libs/template.js"></script>
+<script type="text/javascript" src="blocks/model/model.js"></script>
+<script type="text/javascript" src="blocks/menu/menu.js"></script>
+<script type="text/javascript" src="blocks/form/form.js"></script>
+<script type="text/javascript" src="blocks/app/app.js"></script>
+
+
+</body>
+
+</html>

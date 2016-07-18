@@ -1,0 +1,86 @@
+.sweet {
+  display: none;
+  margin: 0;
+}
+
+.menu .menu_title {
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 36px;
+  text-transform: uppercase;
+  padding: 0 20px;
+}
+
+body {
+  max-width: 300px;
+  margin: 0 auto;
+  border: 2px solid grey;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.open {
+  margin: 0 auto;
+  display: block;
+}
+
+.sweet {
+  font-size: 30px;
+  margin: 0;
+  list-style-type: none;
+  list-style-position: outside;
+  position: relative;
+}
+
+.sweet:hover {
+  transition: 1s;
+  background: #FFCC80;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  display: block;
+  border: none;
+  cursor: pointer;
+  opacity: 0.01;
+}
+
+.close:before {
+  content: url(http://www.fancyicons.com/free-icons/218/mixed/png/24/fire_24.png);
+
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+input{
+  line-height: 30px;
+  font-size: 22px;
+  width: 100%;
+}
+
+#newCalorie:hover{
+  background: none;
+}
+
+.addItem{
+  position: absolute;
+  top: 0;
+  margin-top: 3px;
+  right: 5px;
+  display: block;
+  border: none;
+  cursor: pointer
+}
+
+.addItem:before{
+  content: "+";
+
+}
+
+.js-form:hover{
+  background: white;
+}
