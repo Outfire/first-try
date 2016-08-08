@@ -66,6 +66,7 @@ let templateEngine  = window.templateEngine;
 			return index !== removedItem.index;
 		});
 		this.render();
+		this.openMenu();
 	}
 
 	/**
