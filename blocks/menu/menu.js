@@ -66,7 +66,7 @@ let templateEngine  = window.templateEngine;
 			return index !== removedItem.index;
 		});
 		this.render();
-		this.openMenu();
+	
 	}
 
 	/**
@@ -80,6 +80,7 @@ let templateEngine  = window.templateEngine;
 		this.trigger('remove', {
 			index
 		});
+		this.openMenu();
 	}
 	/**
 	 * Клик в любую область меню
