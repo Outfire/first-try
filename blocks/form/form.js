@@ -69,7 +69,7 @@
             event.preventDefault();
 
             this.trigger('add', {
-
+                href: this.getField('href').value,
                 anchor: this.getField('anchor').value
             });
 
