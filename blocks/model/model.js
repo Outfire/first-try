@@ -60,12 +60,10 @@
          * @param  {Function} resolve
          * @return {XMLHttpRequest}
          */
-        save(resolve) {
+        save() {
             let req = this._makeRequest('PUT', req => {
                 let data = this.parse(req.responseText);
                 this.data = data;
-
-                resolve(this);
             });
 
             let reqString = JSON.stringify(this.getData());
