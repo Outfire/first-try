@@ -4,10 +4,6 @@
 // import
 let templateEngine  = window.templateEngine;
 
-/**
- * @class Menu
- * Компонента "Меню"
- */
 	class Menu {
 	constructor(options) {
 		this.el = options.el;
@@ -18,10 +14,8 @@ let templateEngine  = window.templateEngine;
 		this.action();
 	}
 
-	/**
-	 * Создаем HTML
-	 * @param {Object|undefined} data
-	 */
+
+	//Создаем HTML
 	render(data) {
 		if (data) {
 			this.data = data;
@@ -30,16 +24,12 @@ let templateEngine  = window.templateEngine;
 		this.el.innerHTML = templateEngine(this._template, this.data);
 	}
 
-	/**
-	 * Развешиваем события
-	 */
+	//Развешиваем события
 	action() {
 		this.el.addEventListener('click', this._onClick.bind(this));
 	}
 
-	/**
-	 * Открывем меню по клику
-	 */
+	//Открывем меню по клику
 	openMenu() {
 		this.sweet = this.el.querySelectorAll('.sweet');
 		for (let i = 0; i < this.sweet.length; i++) {
@@ -47,20 +37,16 @@ let templateEngine  = window.templateEngine;
 		}
 	}
 
-	/**
-	 * Добавляем элемент меню
-	 * @param {Object} item
-	 */
+
+	//Добавляем элемент меню
 	addItem(item) {
 		this.data.items.push(item);
 		this.render();
 		this.openMenu();
 	}
 
-	/**
-	 * Удаляем пункт меню из данных
-	 * @param  {Object} item
-	 */
+
+	//Удаляем пункт меню из данных
 	removeItem (removedItem) {
 		this.data.items = this.data.items.filter((item, index) => {
 			return index !== removedItem.index;
@@ -69,11 +55,7 @@ let templateEngine  = window.templateEngine;
 	
 	}
 
-	/**
-	 * Удаления элемента меню
-	 * @param  {HTMLElement} item
-	 * @private
-	 */
+	//Удаления элемента меню
 	_onRemoveClick(item) {
 		let index = parseInt(item.parentNode.dataset.index, 10);
 
@@ -82,11 +64,8 @@ let templateEngine  = window.templateEngine;
 		});
 		this.openMenu();
 	}
-	/**
-	 * Клик в любую область меню
-	 * @param {Event} event
-	 * @private
-	 */
+
+	//Клик в любую область меню
 	_onClick(event) {
 
 		let item = event.target;
@@ -103,11 +82,8 @@ let templateEngine  = window.templateEngine;
 		}
 	}
 
-	/**
-	 * Сообщение миру о случившемся
-	 * @param {string} name тип события
-	 * @param {Object} data объект события
-	 */
+
+	//Сообщение о случившемся
 	trigger (name, data) {
 		let widgetEvent = new CustomEvent(name, {
 			bubbles: true,
