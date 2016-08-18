@@ -2,16 +2,9 @@
     "use strict";
 
     let templateEngine  = window.templateEngine;
-    /**
-     * @class Form
-     * Компонента "Форма"
-     */
+
     class Form {
 
-        /**
-         * @constructor
-         * @param  {Object} opts
-         */
         constructor(opts) {
             this.el = opts.el;
             this.data = opts.data;
@@ -21,28 +14,21 @@
             this.action();
         }
 
-        /**
-         * Создаем HTML
-         */
+
+        //Создаем HTML
         render() {
             this.el.innerHTML = templateEngine(this._template, this.data);
         }
 
 
-        /**
-         * Получение элемента формы по имени
-         * @param  {string} name
-         * @return {HTMLElement}
-         */
+
+        //Получение элемента формы по имени
         getField(name) {
             return this.el.querySelector(`[name="${name}"]`);
         }
 
-        /**
-         * Сообщение миру о случившемся
-         * @param {string} name тип события
-         * @param {Object} data объект события
-         */
+
+        //Сообщение миру о случившемся
         trigger(name, data) {
             let widgetEvent = new CustomEvent(name, {
                 bubbles: true,
@@ -52,19 +38,14 @@
             this.el.dispatchEvent(widgetEvent);
         }
 
-        /**
-         * Развешиваем события
-         */
+        //Развешиваем события
         action() {
             this.el.addEventListener('submit', this._onSubmit.bind(this));
         }
 
 
-        /**
-         * Отправка данных формы
-         * @param {Event} event
-         * @private
-         */
+
+        //Отправка данных формы
         _onSubmit(event) {
             event.preventDefault();
 
