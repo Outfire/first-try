@@ -1,7 +1,7 @@
 (function() {
     "use strict";
 
-    const BASE_URL = 'https://outfirelearnjs.firebaseio.com/';
+    const BASE_URL = 'https://.firebaseio.com/';
 
     class Model {
 
